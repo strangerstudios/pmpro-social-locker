@@ -2,14 +2,14 @@
 /**
  * Plugin Name: PMPro Social Locker
  * Description: Integrate PMPro with the Social Locker plugin from OnePress (http://wordpress.org/support/plugin/social-locker). The goal is to give a user a free membership if they interact with Social Locker.
- * Version: 0.1
+ * Version: .1.1
  * Author URI: http://www.slocumstudio.com/
  * Author: Scott Sousa (Slocum Studio), Stranger Studios
  */
 
 // Constants
-define( 'PMPROSL_FREE_LEVEL_ID', 2 );
-define( 'PMPROSL_MEMBERSHIP_PERIOD_DAYS', 7 );
+//define( 'PMPROSL_FREE_LEVEL_ID', 5 );             //membership level to give access to
+//define( 'PMPROSL_MEMBERSHIP_PERIOD_DAYS', 7 );    //number of days to give visitor access
 
 /**
  * This function hooks into the AJAX action of Social Locker when a click is tracked. We're using it to set a cookie 
