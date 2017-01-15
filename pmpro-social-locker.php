@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PMPro Social Locker
  * Description: Integrate PMPro with the Social Locker plugin from OnePress (http://wordpress.org/support/plugin/social-locker). The goal is to give a user a free membership if they interact with Social Locker.
- * Version: .1.1
+ * Version: .1.2
  * Author URI: http://www.slocumstudio.com/
  * Author: Scott Sousa (Slocum Studio), Stranger Studios
  */
