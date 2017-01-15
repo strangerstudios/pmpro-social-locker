@@ -3,7 +3,7 @@ Contributors: scottsousa
 Tags: pmpro, paid memberships pro, social locker
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: .1.1
+Stable tag: .1.2
 
 
 == Description ==
@@ -29,6 +29,8 @@ Please visit our premium support site at http://www.paidmembershipspro.com for m
 Please Note: This plugin is meant as a temporary solution. Most updates and fixes will be reserved for when this functionality is built into Paid Memberships Pro. We may not fix the pmpro-addon-packages plugin itself unless it is critical.
 
 == Changelog ==
+= .1.2 =
+* ENHANCEMENT/BUG: Fixed potential PHP7 issue
 = .1.1 =
 * Commented out constant definitions to discourage editing the core plugin file. Define the constants somewhere else so your settings don't get overwritten with any updates.
 * Moved plugin file into main folder.
