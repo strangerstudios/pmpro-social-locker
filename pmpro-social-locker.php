@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PMPro Social Locker
  * Description: Integrate PMPro with the Social Locker plugin from OnePress (http://wordpress.org/support/plugin/social-locker). The goal is to give a user a free membership if they interact with Social Locker.
- * Version: .1.1
+ * Version: .1.2
  * Author URI: http://www.slocumstudio.com/
  * Author: Scott Sousa (Slocum Studio), Stranger Studios
  */
@@ -52,13 +52,12 @@ function pmprosl_pmpro_has_membership_access_filter( $hasaccess, $post, $user, $
 	// If the flag is set
 	if ( isset( $_COOKIE['pmprosl_has_access'] ) && $_COOKIE['pmprosl_has_access'] )
 		// Loop through post levels
-		foreach ( $post_membership_levels as $level )
+		foreach ( $post_membership_levels as $level ) {
 			// If the cookie matches one of the post levels, give them access
 			if ( ( int ) $_COOKIE['pmprosl_has_access'] == $level->id ) {
-				$hasaccess = true;
-
-				break;
+				return true;
 			}
+		}
 
 	return $hasaccess;
 }
