@@ -1,11 +1,12 @@
 <?php
-/**
- * Plugin Name: PMPro Social Locker
- * Description: Integrate PMPro with the Social Locker plugin from OnePress (http://wordpress.org/support/plugin/social-locker). The goal is to give a user a free membership if they interact with Social Locker.
- * Version: .1.1
- * Author URI: http://www.slocumstudio.com/
- * Author: Scott Sousa (Slocum Studio), Stranger Studios
- */
+/*
+Plugin Name: Paid Memberships Pro - Social Locker Add On
+Plugins URI: https://www.paidmembershipspro.com/add-ons/pmpro-social-locker/
+Description: Integrate PMPro with the Social Locker plugin from OnePress.
+Version: .1.1
+Author: Scott Sousa, Paid Memberships Pro
+Author URI: https://www.paidmembershipspro.com
+*/
 
 // Constants
 //define( 'PMPROSL_FREE_LEVEL_ID', 5 );             //membership level to give access to
@@ -62,3 +63,21 @@ function pmprosl_pmpro_has_membership_access_filter( $hasaccess, $post, $user, $
 
 	return $hasaccess;
 }
+
+/**
+ * Function to add links to the plugin row meta
+ *
+ * @param array  $links Array of links to be shown in plugin meta.
+ * @param string $file Filename of the plugin meta is being shown for.
+ */
+function pmprosl_plugin_row_meta( $links, $file ) {
+	if ( strpos( $file, 'pmpro-social-locker.php' ) !== false ) {
+		$new_links = array(
+			'<a href="' . esc_url( 'https://www.paidmembershipspro.com/add-ons/pmpro-social-locker/' ) . '" title="' . esc_attr( __( 'View Documentation', 'pmpro-social-locker' ) ) . '">' . __( 'Docs', 'pmpro-social-locker' ) . '</a>',
+			'<a href="' . esc_url( 'http://paidmembershipspro.com/support/' ) . '" title="' . esc_attr( __( 'Visit Customer Support Forum', 'pmpro-social-locker' ) ) . '">' . __( 'Support', 'pmpro-social-locker' ) . '</a>',
+		);
+		$links = array_merge( $links, $new_links );
+	}
+	return $links;
+}
+add_filter( 'plugin_row_meta', 'pmprosl_plugin_row_meta', 10, 2 );
